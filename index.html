@@ -33,57 +33,143 @@
       box-shadow:var(--shadow);
       backdrop-filter: blur(8px) saturate(120%);
       border: 1px solid rgba(255,255,255,0.12);
-      display:grid;grid-template-columns: 1fr 360px;gap:22px;align-items:center;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:22px;
+      align-items:center;
+      position:relative;
     }
 
-    .left{color: #4b2e2e;}
+    .left{color:#4b2e2e;}
 
     .tagline{
-      font-family: 'Great Vibes', cursive; font-size:44px; margin:0 0 6px; letter-spacing:0.6px;
-      text-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      font-family:'Great Vibes', cursive;
+      font-size:44px;
+      margin:0 0 6px;
+      letter-spacing:0.6px;
+      text-shadow:0 6px 18px rgba(0,0,0,0.25);
     }
 
     .subtitle{font-weight:600;color:#5a3a3a;margin:0 0 18px}
 
     .message{
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.04);
-      line-height:1.55;color:#5a3a3a;font-size:16px;
+      padding:18px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.04);
+      line-height:1.55;
+      color:#5a3a3a;
+      font-size:16px;
     }
 
     .message p{margin:0 0 10px}
 
     .sign{margin-top:14px;font-weight:600;color:#5a3a3a;}
 
-    .right{display:flex;flex-direction:column;gap:14px;align-items:center}
+    .right{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      align-items:center;
+    }
 
-    .photos{display:flex;gap:12px;align-items:center;justify-content:center;}
+    .photos{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
 
     .photo{
-      width:110px;height:110px;border-radius:18px;overflow:hidden;flex:0 0 110px;
+      width:110px;height:110px;
+      border-radius:18px;
+      overflow:hidden;
+      flex:0 0 auto;
       background:linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
-      border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 20px rgba(0,0,0,0.22);
-      transform: translateY(0);transition:transform .32s cubic-bezier(.2,.9,.3,1);
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 8px 20px rgba(0,0,0,0.22);
+      transform: translateY(0);
+      transition:transform .32s cubic-bezier(.2,.9,.3,1);
     }
 
-    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .photo img{
+      width:100%;height:100%;object-fit:cover;display:block;
+    }
     .photo:hover{transform: translateY(-8px) rotate(-1deg)}
-    .photo.big{width:150px;height:150px;border-radius:22px;flex:0 0 150px}
 
-    .caption{font-size:13px;color:#5a3a3a;margin-top:6px;text-align:center}
-
-    @media(max-width:880px){
-      .card{grid-template-columns:1fr;padding:20px}
-      .right{order:-1;flex-direction:row;gap:12px}
-      .photos{gap:10px}
+    .photo.big{
+      width:150px;height:150px;border-radius:22px;
     }
 
-    .hearts{position:absolute;left:22px;top:18px;opacity:0.14;font-size:24px;pointer-events:none}
+    .caption{
+      font-size:13px;color:#5a3a3a;margin-top:6px;text-align:center;
+    }
 
+    .hearts{
+      position:absolute;
+      left:22px;
+      top:18px;
+      opacity:0.14;
+      font-size:24px;
+      pointer-events:none;
+    }
+
+    /* ------------------------------------------
+       📱 RESPONSIVE PARA TELÉFONOS
+    -------------------------------------------*/
+    @media(max-width:720px){
+      body{
+        padding:16px;
+      }
+
+      .card{
+        grid-template-columns:1fr;
+        padding:20px;
+        text-align:center;
+      }
+
+      .tagline{
+        font-size:36px;
+      }
+
+      .subtitle{
+        font-size:15px;
+      }
+
+      .message{
+        font-size:15px;
+        padding:14px;
+      }
+
+      .right{
+        order:-1;
+        margin-bottom:12px;
+      }
+
+      .photos{
+        gap:10px;
+      }
+
+      .photo{width:90px;height:90px}
+      .photo.big{width:120px;height:120px}
+
+      .caption{
+        font-size:12px;
+        padding:0 10px;
+      }
+
+      .hearts{
+        top:6px;
+        left:10px;
+        font-size:18px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="hearts">❤ ❤ ❤</div>
+
   <article class="card">
     <section class="left">
       <h1 class="tagline">🌸 Para ti, hermosa</h1>
@@ -105,10 +191,9 @@
         <div class="photo"><img src="foto3.jpeg" alt="Foto 3" /></div>
       </div>
 
-      <div class="caption" style="margin-top:10px; font-size:14px;">
+      <div class="caption">
         Cada foto tuya tiene algo que encanta: tus ojos bonitos, la fuerza suave que transmites y ese estilo marcado por tus tattoos que te hace única.
       </div>
-
     </aside>
   </article>
 </body>
